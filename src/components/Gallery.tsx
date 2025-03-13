@@ -56,9 +56,9 @@ const Gallery = () => {
   }, []);
   
   return (
-    <section id="gallery" className="py-24 bg-gray-50 relative">
+    <section id="gallery" className="py-24 bg-gray-50 dark:bg-gray-800 relative">
       {/* Decorative element */}
-      <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent"></div>
+      <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent dark:from-gray-900 dark:to-transparent"></div>
       
       <div className="container mx-auto px-4">
         <div ref={ref}>
@@ -66,7 +66,7 @@ const Gallery = () => {
             <span className="inline-block py-1 px-3 rounded-full bg-ds-teal/10 text-ds-teal text-sm font-medium mb-3">
               Cosplay Gallery
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-ds-black">
+            <h2 className="text-3xl md:text-4xl font-bold text-ds-black dark:text-white">
               Capturing the <span className="water-breathing-text">Spirit</span> of Tanjiro
             </h2>
           </div>
@@ -78,7 +78,7 @@ const Gallery = () => {
                 className={`transition-all duration-700 delay-${index * 100} ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
               >
                 <div 
-                  className="overflow-hidden rounded-lg shadow-md cursor-pointer group relative bg-white"
+                  className="overflow-hidden rounded-lg shadow-md cursor-pointer group relative bg-white dark:bg-gray-900"
                   onClick={() => setSelectedImage(image.src)}
                 >
                   <div className="relative pt-[75%] overflow-hidden">
@@ -91,7 +91,7 @@ const Gallery = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-ds-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   <div className="p-4">
-                    <h3 className="text-ds-black font-medium group-hover:text-ds-teal transition-colors">{image.caption}</h3>
+                    <h3 className="text-ds-black dark:text-white font-medium group-hover:text-ds-teal transition-colors">{image.caption}</h3>
                   </div>
                   <div className="absolute inset-0 border-2 border-transparent group-hover:border-ds-teal/20 rounded-lg transition-all duration-300"></div>
                 </div>

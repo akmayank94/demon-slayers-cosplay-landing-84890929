@@ -44,11 +44,50 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 186 53% 51%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 186 53% 51%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+
+    --sidebar-background: 240 10% 3.9%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 240 5.9% 10%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 240 4.9% 83.9%;
+  }
 }
 
 @layer base {
   * {
-    @apply border-border selection:bg-ds-teal/20 selection:text-ds-darkTeal;
+    @apply border-border selection:bg-ds-teal/20 selection:text-ds-darkTeal dark:selection:bg-ds-teal/30 dark:selection:text-white;
   }
   
   body {
@@ -72,7 +111,7 @@
   }
 
   .glass-card {
-    @apply backdrop-blur-lg bg-white/60 border border-white/20 shadow-lg;
+    @apply backdrop-blur-lg bg-white/60 border border-white/20 shadow-lg dark:bg-black/40 dark:border-white/10;
   }
   
   .water-breathing-text {
@@ -111,16 +150,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  @apply bg-gray-100 dark:bg-gray-800;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3EBDC6;
-  border-radius: 4px;
+  @apply bg-ds-teal rounded-md;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #24696E;
+  @apply bg-ds-darkTeal;
 }
 
 /* Water ripple effect */
