@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Custom colors for Demon Slayer theme
+				ds: {
+					teal: '#3EBDC6',
+					darkTeal: '#24696E',
+					black: '#221F26',
+					gray: '#403E43',
+					red: '#EA384C',
+					blue: '#0E71B3',
+					lightBlue: '#76C5F4',
 				}
 			},
 			borderRadius: {
@@ -70,25 +81,51 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-20px)' }
+				},
+				'water-ripple': {
+					'0%': { transform: 'scale(0)', opacity: '1' },
+					'100%': { transform: 'scale(4)', opacity: '0' }
+				},
+				'slide-up': {
+					'0%': { transform: 'translateY(100px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
+				'slide-right': {
+					'0%': { transform: 'translateX(-100px)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
+				},
+				'pulse-glow': {
+					'0%, 100%': { opacity: '0.6' },
+					'50%': { opacity: '1' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'water-ripple': 'water-ripple 2s ease-out infinite',
+				'slide-up': 'slide-up 0.8s ease-out forwards',
+				'slide-right': 'slide-right 0.8s ease-out forwards',
+				'fade-in': 'fade-in 1s ease-out forwards',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'water-pattern': "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSIxMDAiPgo8cGF0aCBkPSJNMjggNjYgQzI4IDYwLCAyNCA1MCwgMTkgNDggQzE0IDQ2LCA4IDQyLCA4IDI4IEM4IDE0LCAxNCA2LCAxNCA2IEMxNCA2LCA4IDE0LCA4IDI4IEM4IDQyLCAxNCA1MCwgMTkgNTIgQzI0IDU0LCAyOCA0NiwgMjggNDAgTDI4IDM0IEMyOCAyOCwgMzIgMTgsIDM3IDE2IEM0MiAxNCwgNDggMTAsIDQ4IC00IEM0OCAtMTgsIDQyIC0yNiwgNDIgLTI2IEM0MiAtMjYsIDQ4IC0xOCwgNDggLTQgQzQ4IDEwLCA0MiAxOCwgMzcgMjAgQzMyIDIyLCAyOCAxNCwgMjggOCBMMjggMiBDMjggLTQsIDI0IC0xNCwgMTkgLTE2IEMxNCAtMTgsIDggLTIyLCA4IC0zNiBDOCAtNTAsIDE0IC01OCwgMTQgLTU4IEMxNCAtNTgsIDggLTUwLCA4IC0zNiBDOCAtMjIsIDE0IC0xNCwgMTkgLTEyIEMyNCAtMTAsIDI4IC0xOCwgMjggLTI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwRTcxQjMiIHN0cm9rZS13aWR0aD0iMiI+CjxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0idHJhbnNsYXRlIiBmcm9tPSIwIDEwMCIgdG89IjAgLTEwMCIgYmVnaW49IjAiIGR1cj0iMyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4KPC9wYXRoPgo8L3N2Zz4=')",
+				'checkered-pattern': "linear-gradient(45deg, #3EBDC6 25%, transparent 25%), linear-gradient(-45deg, #3EBDC6 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #3EBDC6 75%), linear-gradient(-45deg, transparent 75%, #3EBDC6 75%)"
 			}
 		}
 	},
