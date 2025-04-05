@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tanjiro Cosplay | Redirecting...</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script takes the current URL and converts the path and query
+      // parameters into just a query string, and then redirects the browser
+      // to the new URL with only a query string and hash fragment.
+
+      // Parse the URL
+      var pathSegmentsToKeep = 0;
+      var l = window.location;
+      var locationWithoutHash = l.href.replace(l.hash, '');
+      
+      // Extract the path (everything after the domain)
+      var uri = l.pathname.replace(/^\//, '');
+      var cleanUri = uri.replace(/\/$/, '');
+      
+      // Redirect to the index.html with the full path in the URL
+      var redirectUrl = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '');
+      
+      // GitHub Pages are served from a subfolder
+      var segments = cleanUri.split('/');
+      var repo = segments.shift();
+      redirectUrl += '/' + repo + '/?p=/';
+      
+      if (segments.length > 0) {
+        redirectUrl += segments.join('/') + '/';
+      }
+      
+      redirectUrl += l.search;
+      
+      // Redirect with replacing the current history state
+      window.history.replaceState(null, null, redirectUrl);
+      window.location.replace(redirectUrl);
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
+</html>
